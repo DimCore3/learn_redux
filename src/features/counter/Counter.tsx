@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { increment, decrement } from './counterSlice';
+import {moveRight, moveLeft} from '../box/boxSlice';
 
 const Counter = () => {
     const count = useSelector((state: any) => state.counter.count);
@@ -11,8 +12,14 @@ const Counter = () => {
                 {count}
             </p>
             <div>
-                <button onClick={() => dispatch(increment())}>+</button>
-                <button onClick={() => dispatch(decrement())}>-</button>
+                <button onClick={() => {
+                    dispatch(increment());
+                    dispatch(moveRight());
+                }}>+</button>
+                <button onClick={() => {
+                    dispatch(decrement());
+                    dispatch(moveLeft());
+                }}>-</button>
             </div>
         </section>
     );

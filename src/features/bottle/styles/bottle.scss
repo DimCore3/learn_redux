@@ -1,0 +1,23 @@
+@mixin half-size() {
+    width: 100%;
+    height: 50%;
+}
+
+.bottle {
+    height: 100px;
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+
+    .bottle-top {
+        @include half-size;
+        border: 2px black solid;
+    }
+    
+    .bottle-bottom {
+        @include half-size;
+        background-color: aqua;
+        border: 2px black solid;
+    }
+}
